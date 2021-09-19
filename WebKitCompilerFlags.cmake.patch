@@ -1,0 +1,15 @@
+# fixup c++: error: unrecognized command-line option ‘-fcolor-diagnostics’
+diff --git a/Source/cmake/WebKitCompilerFlags.cmake b/Source/cmake/WebKitCompilerFlags.cmake
+index 475f4b1..595a498 100644
+--- a/Source/cmake/WebKitCompilerFlags.cmake
++++ b/Source/cmake/WebKitCompilerFlags.cmake
+@@ -160,8 +160,7 @@ endif ()
+ 
+ # Ninja tricks compilers into turning off color support.
+ if (CMAKE_GENERATOR STREQUAL "Ninja")
+-    WEBKIT_PREPEND_GLOBAL_COMPILER_FLAGS(-fcolor-diagnostics
+-                                         -fdiagnostics-color=always)
++    WEBKIT_PREPEND_GLOBAL_COMPILER_FLAGS(-fdiagnostics-color=always)
+ endif ()
+ 
+ 
