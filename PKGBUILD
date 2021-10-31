@@ -1,9 +1,9 @@
-# https://github.com/archlinux/svntogit-packages/blob/packages/webkit2gtk/trunk/PKGBUILD
+# https://github.com/archlinux/svntogit-packages/raw/packages/webkit2gtk/trunk/PKGBUILD
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=webkit2gtk
-pkgver=2.32.4
+pkgver=2.34.1
 pkgrel=1
 pkgdesc="Web content engine for GTK"
 url="https://webkitgtk.org"
@@ -25,10 +25,10 @@ optdepends=('geoclue: Geolocation support'
 source=($url/releases/webkitgtk-$pkgver.tar.xz{,.asc}
   PasteboardGtk.cpp.patch
 WebKitCompilerFlags.cmake.patch)
-sha256sums=('00ce2d3f798d7bc5e9039d9059f0c3c974d51de38c8b716f00e94452a177d3fd'
+sha256sums=('443c1316705de024741748e85fe32324d299d9ee68e6feb340b89e4a04073dee'
             'SKIP'
-          '2bef06563212e116a78ec47665e4baec94bef44029e1f0e20f115bc65de5567b'
-        '2c4d2c13a02a734286df2ee9b38c8b3b40f9805c8e8a6498980655403499949d')
+	    '2bef06563212e116a78ec47665e4baec94bef44029e1f0e20f115bc65de5567b'
+        '9b8e2f0f4e07b164adfb7212097c258692a14bf84539ebeae0593a572149db18')
 validpgpkeys=('D7FCF61CF9A2DEAB31D81BD3F3D322D0EC4582C3'  # Carlos Garcia Campos <cgarcia@igalia.com>
               '5AA3BC334FD7E3369E7C77B291C559DBE4C9123B') # Adrián Pérez de Castro <aperez@igalia.com>
 
@@ -46,6 +46,7 @@ build() {
     -DCMAKE_INSTALL_LIBDIR=lib \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DCMAKE_SKIP_RPATH=ON \
+    -DUSE_SOUP2=ON \
     -DENABLE_GTKDOC=ON \
     -DENABLE_MINIBROWSER=ON
   cmake --build build
