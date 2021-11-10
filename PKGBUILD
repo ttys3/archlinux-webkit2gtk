@@ -1,17 +1,17 @@
-# https://github.com/archlinux/svntogit-packages/raw/packages/webkit2gtk/trunk/PKGBUILD
+# https://raw.githubusercontent.com/archlinux/svntogit-packages/packages/webkit2gtk-4.1/trunk/PKGBUILD
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
-pkgname=webkit2gtk
+pkgname=webkit2gtk-4.1
 pkgver=2.34.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Web content engine for GTK"
 url="https://webkitgtk.org"
 groups=('modified')
 arch=(x86_64)
 license=(custom)
 depends=(cairo fontconfig freetype2 libgcrypt glib2 gtk3 harfbuzz harfbuzz-icu
-         icu libjpeg libsoup libxml2 zlib libpng sqlite atk libwebp at-spi2-core
+         icu libjpeg libsoup3 libxml2 zlib libpng sqlite atk libwebp at-spi2-core
          libegl libgl libgles libwpe wpebackend-fdo libxslt libsecret libtasn1
          enchant libx11 libxext libice libxt wayland libnotify hyphen openjpeg2
          woff2 libsystemd bubblewrap libseccomp xdg-dbus-proxy gstreamer
@@ -46,7 +46,6 @@ build() {
     -DCMAKE_INSTALL_LIBDIR=lib \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DCMAKE_SKIP_RPATH=ON \
-    -DUSE_SOUP2=ON \
     -DENABLE_GTKDOC=ON \
     -DENABLE_MINIBROWSER=ON
   cmake --build build
@@ -54,9 +53,11 @@ build() {
 
 package() {
   depends+=(libwpe-1.0.so libWPEBackend-fdo-1.0.so)
-  provides+=(libjavascriptcoregtk-4.0.so libwebkit2gtk-4.0.so)
+  provides+=(libjavascriptcoregtk-4.1.so libwebkit2gtk-4.1.so)
 
   DESTDIR="$pkgdir" cmake --install build
+
+  rm -r "$pkgdir/usr/bin"
 
   cd webkitgtk-$pkgver
   find Source -name 'COPYING*' -or -name 'LICENSE*' -print0 | sort -z |
