@@ -3,7 +3,7 @@
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=webkit2gtk
-pkgver=2.34.2
+pkgver=2.34.3
 pkgrel=1
 pkgdesc="Web content engine for GTK"
 url="https://webkitgtk.org"
@@ -25,7 +25,7 @@ optdepends=('geoclue: Geolocation support'
 source=($url/releases/webkitgtk-$pkgver.tar.xz{,.asc}
   PasteboardGtk.cpp.patch
 WebKitCompilerFlags.cmake.patch)
-sha256sums=('584677d6e7cae12e27cdcc8e05b4cf73b54849a24afc3d7a40cec91016deff00'
+sha256sums=('0d2f37aa32e21a36e4dd5a5ce7ae5ce27435c29d6803b962b8c90cb0cc49c52d'
             'SKIP'
         '2bef06563212e116a78ec47665e4baec94bef44029e1f0e20f115bc65de5567b'
         '2c4d2c13a02a734286df2ee9b38c8b3b40f9805c8e8a6498980655403499949d')
