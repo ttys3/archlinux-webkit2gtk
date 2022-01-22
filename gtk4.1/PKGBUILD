@@ -3,7 +3,7 @@
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=webkit2gtk-4.1
-pkgver=2.34.3
+pkgver=2.34.4
 pkgrel=1
 pkgdesc="Web content engine for GTK"
 url="https://webkitgtk.org"
@@ -22,10 +22,11 @@ optdepends=('geoclue: Geolocation support'
             'gst-plugins-good: media decoding'
             'gst-plugins-bad: media decoding'
             'gst-libav: nonfree media decoding')
+options=(!lto)
 source=($url/releases/webkitgtk-$pkgver.tar.xz{,.asc}
   PasteboardGtk.cpp.patch
 WebKitCompilerFlags.cmake.patch)
-sha256sums=('0d2f37aa32e21a36e4dd5a5ce7ae5ce27435c29d6803b962b8c90cb0cc49c52d'
+sha256sums=('975f5019199ba7699191835cf75e01a18b94e3bcd0107da7389d4ddcb1aba406'
             'SKIP'
 	    '2bef06563212e116a78ec47665e4baec94bef44029e1f0e20f115bc65de5567b'
         '2c4d2c13a02a734286df2ee9b38c8b3b40f9805c8e8a6498980655403499949d')
