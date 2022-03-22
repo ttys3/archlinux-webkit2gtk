@@ -3,7 +3,7 @@
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=webkit2gtk-4.1
-pkgver=2.34.6
+pkgver=2.36.0
 pkgrel=1
 pkgdesc="Web content engine for GTK"
 url="https://webkitgtk.org"
@@ -26,7 +26,7 @@ options=(!lto)
 source=($url/releases/webkitgtk-$pkgver.tar.xz{,.asc}
   PasteboardGtk.cpp.patch
 WebKitCompilerFlags.cmake.patch)
-sha256sums=('6bc8fd034aad0432a2459ce4fc7ee25ad65a4924c618bf8d93b52b0c1a84c1f6'
+sha256sums=('b877cca1f105235f5dd57c7ac2b2c2be3c6b691ff444f93925c7254cf156c64d'
             'SKIP'
 	    '2bef06563212e116a78ec47665e4baec94bef44029e1f0e20f115bc65de5567b'
         '2c4d2c13a02a734286df2ee9b38c8b3b40f9805c8e8a6498980655403499949d')
